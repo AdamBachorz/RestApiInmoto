@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>18ce3299-3011-4e7e-948c-a44429c1ee85</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestApiInmoto.Common\RestApiInmoto.Common.csproj" />
+    <ProjectReference Include="..\RestApiInmoto.DAL\RestApiInmoto.DAL.csproj" />
+    <ProjectReference Include="..\RestApiInmoto.Model\RestApiInmoto.Model.csproj" />
+  </ItemGroup>
+
+
+</Project>
