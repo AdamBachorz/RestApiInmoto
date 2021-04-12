@@ -18,10 +18,8 @@ namespace RestApiInmoto.API.Config
             services.AddScoped<INHibernateHelper, NHibernateHelper>();
 
             // DAOs
-            services.AddScoped<IBaseDao<MyEntity>, MyEntityDao>();
-            services.AddScoped<IMyEntityDao, MyEntityDao>();
-            services.AddScoped<IBaseDao<MyReference>, MyReferenceDao>();
-            services.AddScoped<IMyReferenceDao, MyReferenceDao>();
+            services.AddScoped<IBaseDao<Sklep>, SklepDao>();
+            services.AddScoped<ISklepDao, SklepDao>();
 
             //Services
             services.AddScoped<IUserService, UserService>();

@@ -3,16 +3,14 @@ using RestApiInmoto.DAL.Daos.Interfaces;
 using RestApiInmoto.Model.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace RestApiInmoto.DAL.Daos
 {
-    public class MyReferenceDao : BaseDao<MyReference>, IMyReferenceDao
+    public class SklepDao : BaseDao<Sklep>, ISklepDao
     {
-        public MyReferenceDao(INHibernateHelper nHibernateHelper) : base(nHibernateHelper)
+        public SklepDao(ICustomConfig customConfig) : base(customConfig)
         {
-
         }
     }
 }

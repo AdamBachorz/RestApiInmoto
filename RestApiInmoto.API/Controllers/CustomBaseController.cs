@@ -70,7 +70,7 @@ namespace RestApiInmoto.API.Controllers
             {
                 _logger.QuickLog(DbOperationType.Insert, entity);
                 var justAddedEntity =_baseDao.Insert(entity);
-                _logger.LogSuccess(() => justAddedEntity.Equals(entity, excludeId: true) && justAddedEntity.Id > 0);
+                _logger.LogSuccess(() => justAddedEntity.Equals(entity, excludeId: true) && justAddedEntity.ID > 0);
             }
             catch (Exception ex)
             {

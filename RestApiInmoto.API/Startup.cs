@@ -8,6 +8,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RestApiInmoto.API.Config;
 using RestApiInmoto.DAL.Config;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,14 +35,23 @@ namespace RestApiInmoto.API
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
 
+
             var customConfig = Configuration.GetSection(typeof(CustomConfig).Name).Get<CustomConfig>();
-            if (customConfig.IsProduction)
-            {
-                customConfig.ConnectionString =
-                        string.Format(customConfig.ConnectionString, "yexrewgv", "yEddLBhAqpuYlHD5LOCIq3gXuHs6taI0", "tai.db.elephantsql.com", "yexrewgv"); 
-            }
+            //if (customConfig.IsProduction)
+            //{
+            //    customConfig.ConnectionString =
+            //            string.Format(customConfig.ConnectionString, "yexrewgv", "yEddLBhAqpuYlHD5LOCIq3gXuHs6taI0", "tai.db.elephantsql.com", "yexrewgv"); 
+            //}
+
+
+            services.AddDbContext<ArvenaDbContext>(
+                //options => options.UseSqlServer(customConfig.ConnectionString)
+                );
+
             services.AddSingleton<ICustomConfig>(x => customConfig);
             DependencyInjection.RegisterModules(services);
+
+            var t = new ArvenaDbContext(customConfig).Sklep.Take(5).ToList();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

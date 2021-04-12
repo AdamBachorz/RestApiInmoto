@@ -1,13 +1,11 @@
 ﻿using RestApiInmoto.Model.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace RestApiInmoto.DAL.Daos.Interfaces
 {
-    public interface IMyEntityDao : IBaseDao<MyEntity>
+    public interface ISklepDao : IBaseDao<Sklep> 
     {
-        MyEntity GetSpecial();
     }
 }

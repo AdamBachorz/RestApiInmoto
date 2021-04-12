@@ -5,7 +5,6 @@ using NHibernate.Cfg;
 using NHibernate.Cfg.MappingSchema;
 using NHibernate.Mapping.ByCode;
 using NHibernate.Tool.hbm2ddl;
-using RestApiInmoto.Model.Domain.Mappings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +35,6 @@ namespace RestApiInmoto.DAL.Config
         
         private void Mapping(MappingConfiguration mapping)
         {
-            mapping.FluentMappings.Add<MyEntityMapping>();
-            mapping.FluentMappings.Add<MyReferenceMapping>();
         }
 
         private HbmMapping BasicMapping()
